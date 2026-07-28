@@ -1,0 +1,77 @@
+<FTL>
+<animSheet name="oe_invisible" w="35" h="35" fw="35" fh="35">effects/invisible.png</animSheet>
+<anim name="oe_invisible">
+	<sheet>oe_invisible</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>0.1</time>
+</anim>
+
+<animSheet name="oe_invis_bomb" w="35" h="35" fw="35" fh="35">effects/invisible.png</animSheet>
+<anim name="oe_invis_bomb">
+	<sheet>oe_invis_bomb</sheet>
+	<desc length="1" x="0" y="0" />
+	<time>0.001</time>
+</anim>
+
+<animSheet name="oe_invisible_gun" w="33" h="35" fw="11" fh="35">effects/invisible.png</animSheet>
+<weaponAnim name="oe_invisible_gun">
+	<sheet>oe_invisible_gun</sheet>
+	<desc length="3" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="0" y="0" />
+	<mountPoint x="0" y="0" />
+</weaponAnim>
+
+<animSheet name="artillery_oe_broadside_pierce" w="462" h="66" fw="33" fh="66">weapons_oe/artillery_oe_broadside_pierce.png</animSheet>
+<weaponAnim name="artillery_oe_broadside_pierce">
+	<sheet>artillery_oe_broadside_pierce</sheet>
+	<desc length="14" x="0" y="0" />
+	<chargedFrame>10</chargedFrame>
+	<fireFrame>12</fireFrame>
+	<firePoint x="16" y="39" />
+	<mountPoint x="16" y="52" />
+</weaponAnim>
+
+<animSheet name="artillery_oe_broadside_pierce_enemy" w="462" h="66" fw="33" fh="66">weapons_oe/artillery_oe_broadside_pierce_enemy.png</animSheet>
+<weaponAnim name="artillery_oe_broadside_pierce_enemy">
+	<sheet>artillery_oe_broadside_pierce_enemy</sheet>
+	<desc length="14" x="0" y="0" />
+	<chargedFrame>10</chargedFrame>
+	<fireFrame>12</fireFrame>
+	<firePoint x="16" y="39" />
+	<mountPoint x="16" y="52" />
+</weaponAnim>
+
+<animSheet name="artillery_oe_broadside_focus" w="297" h="66" fw="33" fh="66">weapons_oe/artillery_oe_broadside_focus.png</animSheet>
+<weaponAnim name="artillery_oe_broadside_focus">
+	<sheet>artillery_oe_broadside_focus</sheet>
+	<desc length="9" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="16" y="39" />
+	<mountPoint x="16" y="52" />
+	<chargeImage>weapons_oe/artillery_oe_broadside_focus_glow.png</chargeImage>
+</weaponAnim>
+
+<animSheet name="artillery_oe_broadside_missile" w="165" h="66" fw="33" fh="66">weapons_oe/artillery_oe_broadside_missile.png</animSheet>
+<weaponAnim name="artillery_oe_broadside_missile">
+	<sheet>artillery_oe_broadside_missile</sheet>
+	<desc length="5" x="0" y="0" />
+	<chargedFrame>3</chargedFrame>
+	<fireFrame>4</fireFrame>
+	<firePoint x="16" y="39" />
+	<mountPoint x="16" y="52" />
+</weaponAnim>
+
+<animSheet name="artillery_oe_broadside_mine" w="99" h="66" fw="33" fh="66">weapons_oe/artillery_oe_broadside_mine.png</animSheet>
+<weaponAnim name="artillery_oe_broadside_mine">
+	<sheet>artillery_oe_broadside_mine</sheet>
+	<desc length="3" x="0" y="0" />
+	<chargedFrame>1</chargedFrame>
+	<fireFrame>2</fireFrame>
+	<firePoint x="16" y="39" />
+	<mountPoint x="16" y="52" />
+	<chargeImage>weapons_oe/artillery_oe_broadside_mine_glow.png</chargeImage>
+</weaponAnim>
+</FTL>

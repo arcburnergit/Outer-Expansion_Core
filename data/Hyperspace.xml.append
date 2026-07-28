@@ -1,0 +1,239 @@
+<FTL>
+<customTextStyle enabled="true" />
+<mod:findLike type="scripts" limit="1" reverse="false">
+  <mod-append:script>data/oe_scripts/core.lua</mod-append:script>
+  <mod-append:script>data/oe_scripts/core_broadside.lua</mod-append:script>
+  <mod-append:script>data/oe_scripts/core_roamers.lua</mod-append:script>
+</mod:findLike>
+<shieldWithoutSystem enabled="true"/>
+
+<mod:findLike type="ships" limit="1" reverse="false">
+  	<mod:findLike type="shipOrder">
+		<mod-append:ship>PLAYER_SHIP_OE_BROADSIDE</mod-append:ship>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+			<!-- -->
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+		<mod-append:empty/>
+
+		<mod-append:empty/>
+		<mod-append:empty/>
+	</mod:findLike>
+	<mod-append:ship name="PLAYER_SHIP_OE_BROADSIDE" b="true" c="true" secret="true">
+		<unlock variant="a" silent="false">
+			<type>4</type>
+		</unlock>
+		<unlock variant="b" silent="false">
+			<type>1</type>
+			<shipReq>PLAYER_SHIP_OE_BROADSIDE</shipReq>
+			<value>5</value>
+		</unlock>
+		<unlock variant="c" silent="false">
+			<type>1</type>
+			<shipReq>PLAYER_SHIP_OE_BROADSIDE_2</shipReq>
+			<value>5</value>
+		</unlock>
+		<unlock variant="c" silent="false">
+			<type>2</type>
+			<shipReq>PLAYER_SHIP_OE_BROADSIDE</shipReq>
+		</unlock>
+	</mod-append:ship>
+	<mod-append:customShip name="PLAYER_SHIP_OE_BROADSIDE">
+		<hiddenAug>SHIP_REBEL</hiddenAug>
+		<hiddenAug>SHIP_OE_BROADSIDE</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<systemLimit>10</systemLimit>
+		<customReactor maxLevel="30" />
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_OE_BROADSIDE_2">
+		<hiddenAug>SHIP_REBEL</hiddenAug>
+		<hiddenAug>SHIP_OE_BROADSIDE2</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<systemLimit>10</systemLimit>
+		<customReactor maxLevel="30" />
+	</mod-append:customShip>
+	<mod-append:customShip name="PLAYER_SHIP_OE_BROADSIDE_3">
+		<hiddenAug>SHIP_REBEL</hiddenAug>
+		<hiddenAug>SHIP_OE_BROADSIDE3</hiddenAug>
+		<hiddenAug>FOR_MULTIVERSE</hiddenAug>
+		<systemLimit>10</systemLimit>
+		<customReactor maxLevel="30" />
+	</mod-append:customShip>
+</mod:findLike>
+
+<augments>
+</augments>
+
+<events>
+	<variable name="oe_broadside_roamer_beacon_x" op="set" val="0"/>
+	<variable name="oe_broadside_roamer_beacon_y" op="set" val="0"/>
+	<variable name="oe_broadside_roamer_jumping" op="set" val="0"/>
+	<variable name="oe_broadside_roamer_killed" op="set" val="0"/>
+
+	<variable name="oe_broadside_roamer_beacon_x" op="set" val="0"/>
+	<variable name="oe_broadside_roamer_beacon_y" op="set" val="0"/>
+	<variable name="oe_broadside_roamer_jumping" op="set" val="0"/>
+	<variable name="oe_broadside_roamer_killed" op="set" val="0"/>
+
+	<variable name="oe_broadside_missile_chosen" op="set" val="0"/>
+	<variable name="oe_broadside_slot1" op="set" val="1"/>
+	<variable name="oe_broadside_slot2" op="set" val="1"/>
+	<variable name="oe_broadside_slot3" op="set" val="1"/>
+
+	<variable name="oe_broadside_c_has_weapon" op="set" val="0"/>
+	<variable name="oe_broadside_c_slot1" op="set" val="0"/>
+	<variable name="oe_broadside_c_slot2" op="set" val="0"/>
+	<variable name="oe_broadside_c_slot3" op="set" val="0"/>
+</events>
+
+<store>
+	<customStore id="STORE_SYLVAN_OE_WEAPONS">
+        <itemPurchaseLimit>2</itemPurchaseLimit>
+		<category type="WEAPONS">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="WEAPONS">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    			
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+	<customStore id="STORE_SYLVAN_OE_DRONES">
+        <itemPurchaseLimit>2</itemPurchaseLimit>
+		<category type="DRONES">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="DRONES">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    			
+            <item>
+                <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+	<customStore id="STORE_SYLVAN_OE_BOTH">
+        <itemPurchaseLimit>2</itemPurchaseLimit>
+		<category type="WEAPONS">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="DRONES">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    			
+            <item>
+                <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+</store>
+
+<mod:findLike type="achievements" limit="1" reverse="false">
+	<mod-append:page>
+		<section text="The Outer Cluster" hidden="false">
+			<achievement name="ACH_OE_BROADSIDE_DEFEATED">
+				<name>Volley of Abuse</name>
+				<secretDescription>???</secretDescription>
+				<description>Destroy the Rebel Broadsider in sector 7.</description>
+				<icon>ach_oe_broadside_defeat</icon>
+				<lockImage>ach_locked</lockImage>
+				<multiDifficulty>true</multiDifficulty>
+				<sound>achievement</sound>
+			</achievement>
+		</section>
+		<section text="Unique Crew (OE)" hidden="false">
+		</section>
+		<section text="Loot Transports (OE)" hidden="false">
+		</section>
+		<section text="Renegade Cruisers (OE)" hidden="false">
+		</section>
+		<section text="Music (OE)" hidden="false">
+		</section>
+	</mod-append:page>
+	<mod-append:page>
+		<section text="Thest's Boons (OE)" hidden="false">
+		</section>
+	</mod-append:page>
+</mod:findLike>
+</FTL>

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+
+<mod:findName type="event" name="START_BEACON_REAL" limit="1">
+  <mod-append:queueEvent>OE_BROADSIDE_CHOOSE_ARTY</mod-append:queueEvent>
+  <mod-append:queueEvent>OE_SET_TEST_VALUE</mod-append:queueEvent>
+</mod:findName>
+
+<event name="OE_SET_TEST_VALUE">
+	<variable name="oe_test_variable" op="set" val="1"/>
+</event>
+
+<event name="OE_BROADSIDE_CHOOSE_ARTY">
+  <loadEventList seeded="false" first="true" generate="false">
+    <event req="SHIP_OE_BROADSIDE" lvl="1" max_lvl="99999">
+      <text>Choose an artillery for slot 1</text>
+      <choice hidden="false">
+        <text>Laser Artillery.</text>
+        <event>
+          <text>.</text>
+          <loadEvent>OE_BROADSIDE_CHOOSE_LASER_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE_PIERCE"/>
+        </event>
+      </choice>
+      <choice hidden="false">
+        <text>Beam Artillery.</text>
+        <event>
+          <text>.</text>
+          <loadEvent>OE_BROADSIDE_CHOOSE_BEAM_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE_FOCUS"/>
+        </event>
+      </choice>
+      <choice hidden="false" req="oe_broadside_missile_chosen" lvl="0" max_lvl="1" blue="false">
+        <text>Missile Artillery (max: 2).</text>
+        <event>
+          <text>.</text>
+          <loadEvent>OE_BROADSIDE_CHOOSE_MISSILE_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE_MISSILE"/>
+        </event>
+      </choice>
+      <choice hidden="false">
+        <text>Ion Artillery.</text>
+        <event>
+          <text>.</text>
+          <loadEvent>OE_BROADSIDE_CHOOSE_ION_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE_MINE"/>
+        </event>
+      </choice>
+    </event>
+    <event req="SHIP_OE_BROADSIDE2" lvl="1" max_lvl="99999">
+      <text>Choose an artillery for slot 1</text>
+      <choice hidden="false">
+        <text>Laser Artillery.</text>
+        <event>
+          <text>.</text>
+          <loadEvent>OE_BROADSIDE2_CHOOSE_LASER_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE2_LASER"/>
+        </event>
+      </choice>
+      <choice hidden="false">
+        <text>Beam Artillery.</text>
+        <event>
+          <text>.</text>
+          <loadEvent>OE_BROADSIDE2_CHOOSE_BEAM_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE2_BEAM"/>
+        </event>
+      </choice>
+      <choice hidden="false" req="oe_broadside_missile_chosen" lvl="0" max_lvl="1" blue="false">
+        <text>Missile Artillery (max: 2).</text>
+        <event>
+          <text>.</text>
+          <loadEvent>OE_BROADSIDE2_CHOOSE_MISSILE_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE2_MISSILE"/>
+        </event>
+      </choice>
+      <choice hidden="false">
+        <text>Ion Artillery.</text>
+        <event>
+          <text>.</text>
+          <loadEvent>OE_BROADSIDE2_CHOOSE_ION_1</loadEvent>
+          <weapon name="ARTILLERY_BROADSIDE2_ION"/>
+        </event>
+      </choice>
+    </event>
+    <event/>
+  </loadEventList>
+</event>
+
+<event name="OE_BROADSIDE_CHOOSE_LASER_1">
+  <text>You choose the laser.</text>
+	<variable name="oe_broadside_slot1" op="set" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE_CHOOSE_BEAM_1">
+  <text>You choose the beam.</text>
+	<variable name="oe_broadside_slot1" op="set" val="2"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE_CHOOSE_MISSILE_1">
+  <text>You choose the missile.</text>
+	<variable name="oe_broadside_slot1" op="set" val="3"/>
+	<variable name="oe_broadside_missile_chosen" op="add" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE_CHOOSE_ION_1">
+  <text>You choose the ion.</text>
+	<variable name="oe_broadside_slot1" op="set" val="4"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+
+<event name="OE_BROADSIDE_CHOOSE_ARTY_2">
+  <text>Choose an artillery for slot 2</text>
+  <choice hidden="false">
+    <text>Laser Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE_CHOOSE_LASER_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE_PIERCE"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Beam Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE_CHOOSE_BEAM_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE_FOCUS"/>
+    </event>
+  </choice>
+  <choice hidden="false" req="oe_broadside_missile_chosen" lvl="0" max_lvl="1" blue="false">
+    <text>Missile Artillery (max: 2).</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE_CHOOSE_MISSILE_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE_MISSILE"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Ion Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE_CHOOSE_ION_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE_MINE"/>
+    </event>
+  </choice>
+</event>
+
+
+<event name="OE_BROADSIDE_CHOOSE_LASER_2">
+  <text>You choose the laser.</text>
+	<variable name="oe_broadside_slot2" op="set" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE_CHOOSE_BEAM_2">
+  <text>You choose the beam.</text>
+	<variable name="oe_broadside_slot2" op="set" val="2"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE_CHOOSE_MISSILE_2">
+  <text>You choose the missile.</text>
+	<variable name="oe_broadside_slot2" op="set" val="3"/>
+	<variable name="oe_broadside_missile_chosen" op="add" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE_CHOOSE_ION_2">
+  <text>You choose the ion.</text>
+	<variable name="oe_broadside_slot2" op="set" val="4"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+
+<event name="OE_BROADSIDE_CHOOSE_ARTY_3">
+  <text>Choose an artillery for slot 3</text>
+  <choice hidden="false">
+    <text>Laser Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE_CHOOSE_LASER_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE_PIERCE"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Beam Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE_CHOOSE_BEAM_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE_FOCUS"/>
+    </event>
+  </choice>
+  <choice hidden="false" req="oe_broadside_missile_chosen" lvl="0" max_lvl="1" blue="false">
+    <text>Missile Artillery (max: 2).</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE_CHOOSE_MISSILE_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE_MISSILE"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Ion Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE_CHOOSE_ION_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE_MINE"/>
+    </event>
+  </choice>
+</event>
+
+<event name="OE_BROADSIDE_CHOOSE_LASER_3">
+  <text>You choose the laser.</text>
+	<variable name="oe_broadside_slot3" op="set" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE_CHOOSE_BEAM_3">
+  <text>You choose the beam.</text>
+	<variable name="oe_broadside_slot3" op="set" val="2"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE_CHOOSE_MISSILE_3">
+  <text>You choose the missile.</text>
+	<variable name="oe_broadside_slot3" op="set" val="3"/>
+	<variable name="oe_broadside_missile_chosen" op="add" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE_CHOOSE_ION_3">
+  <text>You choose the ion.</text>
+	<variable name="oe_broadside_slot3" op="set" val="4"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+
+
+<event name="OE_BROADSIDE2_CHOOSE_LASER_1">
+  <text>You choose the laser.</text>
+	<variable name="oe_broadside_slot1" op="set" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE2_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE2_CHOOSE_BEAM_1">
+  <text>You choose the beam.</text>
+	<variable name="oe_broadside_slot1" op="set" val="2"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE2_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE2_CHOOSE_MISSILE_1">
+  <text>You choose the missile.</text>
+	<variable name="oe_broadside_slot1" op="set" val="3"/>
+	<variable name="oe_broadside_missile_chosen" op="add" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE2_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE2_CHOOSE_ION_1">
+  <text>You choose the ion.</text>
+	<variable name="oe_broadside_slot1" op="set" val="4"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE2_CHOOSE_ARTY_2"/>
+  </choice>
+</event>
+
+<event name="OE_BROADSIDE2_CHOOSE_ARTY_2">
+  <text>Choose an artillery for slot 2</text>
+  <choice hidden="false">
+    <text>Laser Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE2_CHOOSE_LASER_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_LASER"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Beam Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE2_CHOOSE_BEAM_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_BEAM"/>
+    </event>
+  </choice>
+  <choice hidden="false" req="oe_broadside_missile_chosen" lvl="0" max_lvl="1" blue="false">
+    <text>Missile Artillery (max: 2).</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE2_CHOOSE_MISSILE_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_MISSILE"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Ion Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE2_CHOOSE_ION_2</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_ION"/>
+    </event>
+  </choice>
+</event>
+
+
+<event name="OE_BROADSIDE2_CHOOSE_LASER_2">
+  <text>You choose the laser.</text>
+	<variable name="oe_broadside_slot2" op="set" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE2_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE2_CHOOSE_BEAM_2">
+  <text>You choose the beam.</text>
+	<variable name="oe_broadside_slot2" op="set" val="2"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE2_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE2_CHOOSE_MISSILE_2">
+  <text>You choose the missile.</text>
+	<variable name="oe_broadside_slot2" op="set" val="3"/>
+	<variable name="oe_broadside_missile_chosen" op="add" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE2_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE2_CHOOSE_ION_2">
+  <text>You choose the ion.</text>
+	<variable name="oe_broadside_slot2" op="set" val="4"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="OE_BROADSIDE2_CHOOSE_ARTY_3"/>
+  </choice>
+</event>
+
+<event name="OE_BROADSIDE2_CHOOSE_ARTY_3">
+  <text>Choose an artillery for slot 3</text>
+  <choice hidden="false">
+    <text>Laser Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE2_CHOOSE_LASER_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_LASER"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Beam Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE2_CHOOSE_BEAM_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_BEAM"/>
+    </event>
+  </choice>
+  <choice hidden="false" req="oe_broadside_missile_chosen" lvl="0" max_lvl="1" blue="false">
+    <text>Missile Artillery (max: 2).</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE2_CHOOSE_MISSILE_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_MISSILE"/>
+    </event>
+  </choice>
+  <choice hidden="false">
+    <text>Ion Artillery.</text>
+    <event>
+      <text>.</text>
+      <loadEvent>OE_BROADSIDE2_CHOOSE_ION_3</loadEvent>
+      <weapon name="ARTILLERY_BROADSIDE2_ION"/>
+    </event>
+  </choice>
+</event>
+
+<event name="OE_BROADSIDE2_CHOOSE_LASER_3">
+  <text>You choose the laser.</text>
+	<variable name="oe_broadside_slot3" op="set" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE2_CHOOSE_BEAM_3">
+  <text>You choose the beam.</text>
+	<variable name="oe_broadside_slot3" op="set" val="2"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE2_CHOOSE_MISSILE_3">
+  <text>You choose the missile.</text>
+	<variable name="oe_broadside_slot3" op="set" val="3"/>
+	<variable name="oe_broadside_missile_chosen" op="add" val="1"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+<event name="OE_BROADSIDE2_CHOOSE_ION_3">
+  <text>You choose the ion.</text>
+	<variable name="oe_broadside_slot3" op="set" val="4"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event/>
+  </choice>
+</event>
+
+<event name="OE_ENEMY_BROADSIDE_EVENT">
+	<preventFleet />
+  <preventBossFleet />
+	<preventQuest />
+  <variable name="oe_broadside_roamer_killed" op="set" val="1"/>
+  <text>You arrive at the beacon face to face with a strange rebel ship, it's unlike any design you've seen before. You don't have time to ponder as it turns it's weapons on you.</text>
+  <ship load="OE_BROADSIDE_ENEMY" hostile="true"/>
+  <choice hidden="true">
+    <text>Continue...</text>
+    <event load="COMBAT_CHECK"/>
+  </choice>
+</event>
+
+<ship name="OE_BROADSIDE_ENEMY" auto_blueprint="OE_BROADSIDE_ENEMY">
+	<destroyed load="DESTROYED_OE_BROADSIDE" />
+	<deadCrew load="DEAD_CREW_OE_BROADSIDE" />
+</ship>
+<event name="DESTROYED_OE_BROADSIDE">
+	<text>The fiery red of the explosions complements the orange hull of the Rebel ship. Satisfied with your handiwork, you scrap the ship.</text>
+  <modifyPursuit amount="-2" />
+  <unlockCustomShip silent="false">PLAYER_SHIP_OE_BROADSIDE</unlockCustomShip>
+	<autoReward level="MED">standard</autoReward>
+</event>
+<event name="DEAD_CREW_OE_BROADSIDE">
+	<text>With the Rebel vessel now clear of its crew, you are free to scrap the remains.</text>
+  <modifyPursuit amount="-2" />
+  <unlockCustomShip silent="false">PLAYER_SHIP_OE_BROADSIDE</unlockCustomShip>
+  <!--unlockCustomShip silent="false">PLAYER_SHIP_OE_BROADSIDE</unlockCustomShip-->
+	<autoReward level="HIGH">standard</autoReward>
+</event>
+
+<event name="OE_BROADSIDE3_MAIN">
+  <text>Install the slot 1 weapon into one of the artillery systems, previously installed weapon will be lost.</text>
+  <choice hidden="true">
+    <text>Nevermind.</text>
+    <event load="STORAGE_CHECK"/>
+  </choice>
+  <choice hidden="true" req="oe_broadside_c_has_weapon">
+    <text>Install it into Artillery slot 1 (left most)</text>
+    <event name="OE_BROADSIDE_C_SLOT1">
+      <text>You install the weapon into the artillery system.</text>
+    </event>
+  </choice>
+  <choice hidden="true" req="oe_broadside_c_has_weapon">
+    <text>Install it into Artillery slot 2 (middle)</text>
+    <event name="OE_BROADSIDE_C_SLOT2">
+      <text>You install the weapon into the artillery system.</text>
+    </event>
+  </choice>
+  <choice hidden="true" req="oe_broadside_c_has_weapon">
+    <text>Install it into Artillery slot 3 (right most)</text>
+    <event name="OE_BROADSIDE_C_SLOT3">
+      <text>You install the weapon into the artillery system.</text>
+    </event>
+  </choice>
+  <choice hidden="true" req="oe_broadside_c_has_weapon" lvl="0" max_lvl="0">
+    <text>You need a weapon in your weapon system to install.</text>
+    <event load="OPTION_INVALID"/>
+  </choice>
+</event>
+
+</FTL>

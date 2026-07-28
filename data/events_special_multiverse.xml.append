@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FTL>
+<mod:findName type="event" name="SYLVAN_TRADES_DROPPOINT">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="SYLVAN_AEA_WEAPONS"/>
+        <mod-append:event name="SYLVAN_AEA_BOTH"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="SYLVAN_TRADES_LASTSTAND">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="SYLVAN_AEA_WEAPONS"/>
+        <mod-append:event name="SYLVAN_AEA_DRONES"/>
+        <mod-append:event name="SYLVAN_AEA_BOTH"/>
+    </mod:findLike>
+</mod:findName>
+<mod:findName type="event" name="SYLVAN_TRADES">
+    <mod:findLike type="loadEventList">
+        <mod-append:event name="SYLVAN_AEA_WEAPONS"/>
+        <mod-append:event name="SYLVAN_AEA_DRONES"/>
+        <mod-append:event name="SYLVAN_AEA_BOTH"/>
+        <mod-append:event name="SYLVAN_AEA_LYLMIK" req="loc_sector_count" lvl="3" />
+        <mod-append:event name="SYLVAN_AEA_LOOT" req="loc_sector_count" lvl="3" />
+    </mod:findLike>
+</mod:findName>
+
+<event name="SYLVAN_AEA_WEAPONS">
+	<text>"Aaaaah. Ssstranger ssstranger, any ssself ressspecting Renegade knowssss they need sssome gear if they're going to ssssurvive."</text>
+	<store>STORE_SYLVAN_AEA_WEAPONS</store>
+</event>
+<event name="SYLVAN_AEA_DRONES">
+	<text>"Aaaaah. Ssstranger ssstranger, I might normally sssell gunssss, but I've gathered quite the ssstock of dronesss lately. Maybe you could ussse one?"</text>
+	<store>STORE_SYLVAN_AEA_DRONES</store>
+</event>
+<event name="SYLVAN_AEA_BOTH">
+	<text>"Aaaaah. Ssstranger ssstranger, wasss to a few assorted sssectorsss reccently, picked up ssssome rare weaponssss that might interessst ya'."</text>
+	<store>STORE_SYLVAN_AEA_BOTH</store>
+</event>
+<event name="SYLVAN_AEA_LYLMIK">
+	<text>"Aaaaah. Ssstranger ssstranger, found this ssspooky ruin a while ago, and inssside found tech like you or I've never sssseen! Come, take a look."</text>
+	<store>STORE_SYLVAN_AEA_LYLMIK</store>
+</event>
+<event name="SYLVAN_AEA_LOOT">
+	<text>"Aaaaah. Ssstranger ssstranger, got sssome rare thingsss on sssale, ssstranger!"</text>
+	<store>STORE_SYLVAN_AEA_LOOT</store>
+</event>
+</FTL>

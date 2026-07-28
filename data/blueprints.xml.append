@@ -1,0 +1,663 @@
+<FTL>
+
+<augBlueprint name="SHIP_OE_BROADSIDE">
+	<title>Broadside Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+<augBlueprint name="SHIP_OE_BROADSIDE2">
+	<title>Broadside Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+<augBlueprint name="SHIP_OE_BROADSIDE3">
+	<title>Broadside Cruiser</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>false</stackable>
+	<bp>0</bp>
+</augBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_OE_BROADSIDE" layout="oep_broadside_a" img="oep_broadside_a">
+	<class>Rebel Broadsider</class>
+	<name>The Broadside</name>
+	<desc>A powerful ship designed around it's broadside mounted artillery. This ship's artillery system are modular allowing it to have a number of different combinations of artillery</desc>
+	<unlock id="ship_PLAYER_SHIP_OE_BROADSIDE_unlock" />
+	<systemList>
+		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_OE_BROADSIDE_PIERCE" img="room_artillery_3" />
+		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_OE_BROADSIDE_PIERCE" img="room_artillery_3" />
+		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_OE_BROADSIDE_PIERCE" img="room_artillery_3" />
+		<battery power="1" room="11" start="false" img="room_battery_2" />
+		<cloaking power="1" room="9" start="false" img="room_cloaking_13" />
+		<clonebay power="1" room="8" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="4" start="true" img="room_doors_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones max="8" power="2" room="17" start="false" img="room_drones_3" />
+		<engines power="2" room="5" start="true" img="room_engines_10">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="13" start="false" img="room_hacking_3" />
+		<medbay power="1" room="8" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="16" start="false" img="room_mind_12" />
+		<oxygen power="1" room="12" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="3" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="7" start="true" img="room_sensors_9">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields max="8" power="2" room="14" start="true" img="room_shields_6">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="10" start="false" />
+		<weapons power="2" room="18" start="true" img="room_weapons_12">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="0" count="2" />
+	<droneList drones="0" count="2" />
+	<health amount="24" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="human_engineer" />
+	<crewCount amount="1" class="human_medic" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="human" />
+	<aug name="EX_AUTO_COOLDOWN" />
+	<shieldImage>mup_long1</shieldImage>
+	<mv-mapImage>map_icon_oep_broadside</mv-mapImage>
+</shipBlueprint>
+
+<weaponBlueprint name="ARTILLERY_OE_BROADSIDE_PIERCE">
+	<type>LASER</type>
+	<title>Pierce Laser Artillery</title>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 20] A slow charging duel laser cannon that fires 2 lasers per burst per barrel for a total of 4 shots per charge.</desc>
+	<tooltip>Artillery: A relatively slow charging burst of lasers capable of piercing one layer of shields.</tooltip>
+	<damage>1</damage>
+	<accuracyMod>10</accuracyMod>
+	<shots>2</shots>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>20</cooldown>
+	<power>1</power>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>laser_pierce</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_oe_broadside_pierce</weaponArt>
+</weaponBlueprint>
+<weaponBlueprint name="ARTILLERY_OE_BROADSIDE_PIERCE_ENEMY">
+	<type>LASER</type>
+	<title>Pierce Laser Artillery</title>
+	<short>Artillery</short>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>Artillery: A relatively slow charging burst of lasers capable of piercing one layer of shields.</tooltip>
+	<damage>1</damage>
+	<accuracyMod>10</accuracyMod>
+	<shots>1</shots>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>20</cooldown>
+	<power>1</power>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>laser_pierce</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_oe_broadside_pierce_enemy</weaponArt>
+</weaponBlueprint>
+<weaponBlueprint name="ARTILLERY_OE_BROADSIDE_PIERCE_ENEMY_OFFSET">
+	<type>LASER</type>
+	<title>Pierce Laser Artillery</title>
+	<short>Artillery</short>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<tooltip>Artillery: A relatively slow charging burst of lasers capable of piercing one layer of shields.</tooltip>
+	<damage>1</damage>
+	<accuracyMod>10</accuracyMod>
+	<shots>1</shots>
+	<sp>1</sp>
+	<fireChance>0</fireChance>
+	<breachChance>4</breachChance>
+	<stunChance>2</stunChance>
+	<cooldown>26</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>6</amount>
+		<count>1</count>
+	</boost>
+	<power>1</power>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>laser_burst</image>
+	<launchSounds>
+		<sound>laser_pierce</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_oe_broadside_pierce_enemy</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_OE_BROADSIDE_FOCUS">
+	<type>LASER</type>
+	<tip>tip_beams</tip>
+	<title>Burst Pinpoint Artillery</title>
+	<short>Artillery</short>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 20] A powerful burst pinpoint artillery weapon that is able to fire multiple pinpoint beams in sequence.</desc>
+	<tooltip>Artillery: Powers a long and deadly beam that does 2 damage per room hit, but like the Halberd can only partially pierce through one shield layer.</tooltip>
+	<fireTime>1</fireTime>
+	<damage>3</damage>
+	<shots>2</shots>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>3</breachChance>
+	<stunChance>0</stunChance>
+	<cooldown>20</cooldown>
+	<power>1</power>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>artillery_oe_broadside_focus</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="OE_BROADSIDE_FOCUS_BEAM">
+    <type>BEAM</type>
+    <flavorType>Pinpoint</flavorType>
+    <tip>tip_focus</tip>
+    <title>'Misericorde' Pinpoint</title>
+    <short>'Misericord'</short>
+    <desc>An upgraded Pinpoint weapon that does 3 damage.</desc>
+    <tooltip>One damage per room beam weapon</tooltip>
+    <damage>3</damage>
+    <sp>0</sp>
+    <fireChance>0</fireChance>
+    <breachChance>3</breachChance>
+    <cooldown>14</cooldown>
+    <speed>1</speed>
+    <power>2</power>
+    <cost>80</cost>
+    <bp>2</bp>
+    <rarity>0</rarity>
+    <image>beam_contact</image>
+    <length>1</length>
+    <launchSounds>
+        <sound>focus_strong</sound>
+    </launchSounds>
+    <weaponArt>focus_2</weaponArt>
+    <iconImage>beam</iconImage>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_OE_BROADSIDE_MISSILE">
+	<type>MISSILES</type>
+	<title>Duel Missile Artillery</title>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 20] Fires a pair of missiles which do heavy damage and never miss.</desc>
+	<tooltip>Artillery: Fires a pair of missiles which do heavy damage and never miss.</tooltip>
+	<damage>2</damage>
+	<missiles>0</missiles>
+	<accuracyMod>100</accuracyMod>
+	<shots>2</shots>
+	<sp>10</sp>
+	<fireChance>0</fireChance>
+	<breachChance>10</breachChance>
+	<cooldown>20</cooldown>
+	<power>1</power>
+	<cost>80</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>missile_heavy_2</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_oe_broadside_missile</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_OE_BROADSIDE_MINE">
+	<type>LASER</type>
+	<tip>tip_mine</tip>
+	<title>Ion Minelauncher Artillery</title>
+	<short>Artillery</short>
+	<desc>[Base cooldown: 20] Fires a burst of ionized mines which do hull damage and ionize systems.</desc>
+	<tooltip>Artillery: Fires a burst of ionized mines which do hull damage and ionize systems.</tooltip>
+	<damage>1</damage>
+	<noSysDamage>true</noSysDamage>
+	<ion>2</ion>
+	<speed>15</speed>
+	<shots>3</shots>
+	<sp>10</sp>
+	<stun>6</stun>
+	<fireChance>1</fireChance>
+	<breachChance>4</breachChance>
+	<cooldown>20</cooldown>
+	<power>1</power>
+	<cost>80</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>mine_medium</image>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>artillery_oe_broadside_mine</weaponArt>
+	<iconImage>missile</iconImage>
+</weaponBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_OE_BROADSIDE_2" layout="oep_broadside_b" img="oep_broadside_b">
+	<class>Rebel Broadsider</class>
+	<name>The Sideboard</name>
+	<desc>A powerful ship designed around it's broadside mounted artillery. This ship's artillery system are modular allowing it to have a number of different combinations of artillery.</desc>
+	<unlock id="ship_PLAYER_SHIP_OE_BROADSIDE_2_unlock" />
+	<systemList>
+		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_MFK_1" img="room_artillery_4" />
+		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_MFK_1" img="room_artillery_4" />
+		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_MFK_1" img="room_artillery_4" />
+		<battery power="1" room="7" start="false" img="room_battery_2" />
+		<cloaking power="1" room="6" start="false" img="room_cloaking_9" />
+		<clonebay power="1" room="14" start="false">
+			<slot>
+				<number>1</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="16" start="true" img="room_doors_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="13" start="false" img="room_drones_7" />
+		<engines power="2" room="8" start="true" img="room_engines_8">
+			<slot>
+				<direction>left</direction>
+				<number>2</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="9" start="false" img="room_hacking_3" />
+		<medbay power="1" room="14" start="true" img="room_medbay">
+			<slot>
+				<number>1</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="4" start="false" img="room_mind_10" />
+		<oxygen power="1" room="5" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="3" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="10" start="true" img="room_sensors_9">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="12" start="true" img="room_shields_4">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="17" start="false" />
+		<weapons power="2" room="15" start="true" img="room_weapons_12">
+			<slot>
+				<direction>right</direction>
+				<number>2</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>1</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="0" count="1" />
+	<droneList drones="0" count="3" />
+	<health amount="24" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="human_mfk" />
+	<crewCount amount="1" class="human" />
+	<crewCount amount="1" class="human" />
+	<aug name="EX_AUTO_COOLDOWN" />
+	<shieldImage>mup_long1</shieldImage>
+	<mv-mapImage>map_icon_oep_broadside</mv-mapImage>
+</shipBlueprint>
+
+<weaponBlueprint name="ARTILLERY_OE_BROADSIDE2_LASER">
+	<type>LASER</type>
+	<title>MFK Laser</title>
+	<short>MFK Laser</short>
+	<desc>[Base Cooldown: 25/21/17] A slow charging laser which fires 4 shots that deal double damage to empty rooms.</desc>
+	<tooltip>Artillery: A slow charging laser which fires 4 shots that deal double damage to empty rooms.</tooltip>
+	<damage>1</damage>
+	<hullBust>1</hullBust>
+	<shots>4</shots>
+	<sp>0</sp>
+	<fireChance>1</fireChance>
+	<breachChance>3</breachChance>
+	<cooldown>25</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>4</amount>
+		<count>2</count>
+	</boost>
+	<power>1</power>
+	<cost>55</cost>
+	<bp>6</bp>
+	<rarity>0</rarity>
+	<image>laser_heavy</image>
+	<launchSounds>
+		<sound>lightLaser1</sound>
+		<sound>lightLaser2</sound>
+		<sound>lightLaser3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>hitHull1</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>boss_1_mfk</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_OE_BROADSIDE2_MISSILE">
+	<type>MISSILES</type>
+	<title>MFK Missile</title>
+	<short>MFK M.</short>
+	<desc>[Base Cooldown: 25/21/17] Fires 3 missiles that do 1 damage and 1 extra system damage.</desc>
+	<tooltip>Artillery: Fires 3 missiles; 1 damage each; pierces all shields.</tooltip>
+	<damage>1</damage>
+	<sysDamage>1</sysDamage>
+	<missiles>0</missiles>
+	<shots>3</shots>
+	<sp>10</sp>
+	<fireChance>1</fireChance>
+	<breachChance>10</breachChance>
+	<cooldown>25</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>4</amount>
+		<count>2</count>
+	</boost>
+	<power>1</power>
+	<cost>80</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<image>missile_1</image>
+	<explosion>explosion_random</explosion>
+	<launchSounds>
+		<sound>smallMissile1</sound>
+		<sound>smallMissile2</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>smallExplosion</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>hitShield1</sound>
+		<sound>hitShield2</sound>
+		<sound>hitShield3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>boss_2_mfk</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_OE_BROADSIDE2_BEAM">
+	<type>BEAM</type>
+	<tip>tip_beams</tip>
+	<title>MFK Beam</title>
+	<short>MFK Beam</short>
+	<desc>[Base Cooldown: 25/21/17] 2 damage beam with a long trail, deals double damage to empty rooms.</desc>
+	<tooltip>Artillery: 2 damage beam with a long trail, deals double damage to empty rooms.</tooltip>
+	<damage>2</damage>
+	<hullBust>1</hullBust>
+	<sp>0</sp>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>25</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>4</amount>
+		<count>2</count>
+	</boost>
+	<power>1</power>
+	<cost>70</cost>
+	<bp>7</bp>
+	<rarity>0</rarity>
+	<length>100</length>
+	<image>beam_contact</image>
+	<launchSounds>
+		<sound>beam2</sound>
+	</launchSounds>
+	<weaponArt>boss_3_mfk</weaponArt>
+</weaponBlueprint>
+
+<weaponBlueprint name="ARTILLERY_OE_BROADSIDE2_ION">
+	<type>LASER</type>
+	<title>MFK Ion</title>
+	<short>MFK Ion</short>
+	<locked>1</locked>
+	<desc>[Base Cooldown: 25/21/17] A 3 shot ion that does 1 ion damage and 1 system damage.</desc>
+	<tooltip>Artillery: A 3 shot ion that does 1 ion damage and 1 system damage.</tooltip>
+	<damage>0</damage>
+	<ion>1</ion>
+	<sysDamage>1</sysDamage>
+	<speed>40</speed>
+	<shots>3</shots>
+	<sp>0</sp>
+	<stun>5</stun>
+	<fireChance>0</fireChance>
+	<breachChance>0</breachChance>
+	<cooldown>25</cooldown>
+	<boost>
+		<type>cooldown</type>
+		<amount>4</amount>
+		<count>2</count>
+	</boost>
+	<power>1</power>
+	<cost>40</cost>
+	<bp>4</bp>
+	<rarity>0</rarity>
+	<explosion>explosion_big1_ion</explosion>
+	<image>ion_4_shot</image>
+	<launchSounds>
+		<sound>ionShoot1</sound>
+		<sound>ionShoot2</sound>
+		<sound>ionShoot3</sound>
+	</launchSounds>
+	<hitShipSounds>
+		<sound>ionHit1</sound>
+		<sound>ionHit2</sound>
+		<sound>ionHit3</sound>
+	</hitShipSounds>
+	<hitShieldSounds>
+		<sound>ionShields1</sound>
+		<sound>ionShields2</sound>
+		<sound>ionShields3</sound>
+	</hitShieldSounds>
+	<missSounds>
+		<sound>miss</sound>
+	</missSounds>
+	<weaponArt>boss_4_mfk</weaponArt>
+</weaponBlueprint>
+
+<shipBlueprint name="PLAYER_SHIP_OE_BROADSIDE_3" layout="oep_broadside_c" img="oep_broadside_c">
+	<class>Rebel Broadsider</class>
+	<name>The Barrage</name>
+	<desc>A powerful ship designed around it's broadside mounted artillery. This ship's artillery mounts have been specifically designed to mount any sort of weapon.</desc>
+	<unlock id="ship_PLAYER_SHIP_OE_BROADSIDE_3_unlock" />
+	<systemList>
+		<artillery power="1" max="3" room="0" start="true" weapon="LASER_BURST_1" img="room_artillery_4" />
+		<artillery power="1" max="3" room="1" start="true" weapon="LASER_BURST_1" img="room_artillery_4" />
+		<artillery power="1" max="3" room="2" start="true" weapon="LASER_BURST_1" img="room_artillery_4" />
+		<battery power="1" room="10" start="false" img="room_battery_oe_1" />
+		<cloaking power="1" room="12" start="false" img="room_cloaking_13" />
+		<clonebay power="1" room="15" start="true">
+			<slot>
+				<number>2</number>
+			</slot>
+		</clonebay>
+		<doors power="1" room="7" start="true" img="room_doors_7">
+			<slot>
+				<direction>up</direction>
+				<number>1</number>
+			</slot>
+		</doors>
+		<drones power="2" max="8" room="13" start="false" img="room_drones_15" />
+		<engines power="2" room="4" start="true" img="room_engines_10">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</engines>
+		<hacking power="1" room="17" start="false" img="room_hacking_5" />
+		<medbay power="1" room="15" start="false" img="room_medbay_15">
+			<slot>
+				<number>-2</number>
+			</slot>
+		</medbay>
+		<mind power="1" room="14" start="false" img="room_mind_3" />
+		<oxygen power="1" room="8" start="true" img="room_oxygen_20" />
+		<pilot power="1" room="3" start="true" img="room_pilot">
+			<slot>
+				<direction>right</direction>
+				<number>0</number>
+			</slot>
+		</pilot>
+		<sensors power="1" room="5" start="true" img="room_sensors_9">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</sensors>
+		<shields power="2" max="8" room="16" start="true" img="room_shields_4">
+			<slot>
+				<direction>left</direction>
+				<number>0</number>
+			</slot>
+		</shields>
+		<teleporter power="1" room="9" start="false" />
+		<weapons power="2" room="11" start="true" img="room_weapons_10">
+			<slot>
+				<direction>up</direction>
+				<number>0</number>
+			</slot>
+		</weapons>
+	</systemList>
+	<weaponSlots>2</weaponSlots>
+	<droneSlots>2</droneSlots>
+	<weaponList missiles="0" count="2">
+		<weapon name="LASER_BURST_3" />
+	</weaponList>
+	<droneList drones="0" count="2" />
+	<health amount="24" />
+	<maxPower amount="8" />
+	<crewCount amount="1" class="human_legion" />
+	<crewCount amount="1" class="human_legion_pyro" />
+	<shieldImage>mup_long1</shieldImage>
+	<mv-mapImage>map_icon_oep_broadside</mv-mapImage>
+</shipBlueprint>
+
+</FTL>

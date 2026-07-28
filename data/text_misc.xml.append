@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FTL>
+<text name="ship_PLAYER_SHIP_OE_BROADSIDE_unlock">Reports are coming out of the sectors closest to Node 17 (Sector 7) that a strange rebel ship is patrolling their fleet.</text>
+<text name="ship_PLAYER_SHIP_OE_BROADSIDE_2_unlock">Get to Sector 5 with The Type A to unlock this ship.</text>
+<text name="ship_PLAYER_SHIP_OE_BROADSIDE_3_unlock">Get to Sector 5 with The Type B or beat the game with The Type A to unlock this ship.</text>
+</FTL>
