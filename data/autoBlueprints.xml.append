@@ -1,0 +1,42 @@
+<FTL>
+<blueprintList name="LIST_WEAPONS_OE_SYLVAN">
+</blueprintList>
+
+<blueprintList name="LIST_DRONES_OE_SYLVAN">
+</blueprintList>
+
+<blueprintList name="LIST_WEAPONS_OE_LOOT">
+</blueprintList>
+
+<blueprintList name="LIST_DRONES_OE_LOOT">
+</blueprintList>
+</FTL>
+
+<FTL>
+
+<shipBlueprint name="OE_BROADSIDE_ENEMY" layout="oe_broadside_enemy" img="oe_broadside_enemy">
+	<class>Rebel Broadsider</class>
+	<systemList>
+		<artillery power="1" max="3" room="0" start="true" weapon="ARTILLERY_OE_BROADSIDE_PIERCE_ENEMY" />
+		<artillery power="1" max="3" room="1" start="true" weapon="ARTILLERY_OE_BROADSIDE_PIERCE_ENEMY_OFFSET" />
+		<artillery power="1" max="3" room="2" start="true" weapon="ARTILLERY_OE_BROADSIDE_PIERCE_ENEMY" />
+		<cloaking power="1" max="1" room="10" start="true" />
+		<doors power="1" max="1" room="9" start="true" />
+		<drones power="2" max="8" room="11" start="true" />
+		<engines power="1" max="3" room="4" start="true" />
+		<medbay power="1" max="1" room="6" start="true" />
+		<oxygen power="1" max="1" room="12" start="true" />
+		<pilot power="1" max="1" room="3" start="true" />
+		<shields power="3" max="8" room="7" start="true" />
+	</systemList>
+	<weaponSlots>0</weaponSlots>
+	<droneSlots>3</droneSlots>
+	<weaponList missiles="5" count="0" />
+	<droneList drones="10" count="3" load="LIST_DRONES_ENEMY_COMBAT" />
+	<health amount="10" />
+	<maxPower amount="11" />
+	<crewCount amount="5" max="7" class="human_rebel" />
+	<boardingAI>sabotage</boardingAI>
+</shipBlueprint>
+
+</FTL>

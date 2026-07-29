@@ -1,0 +1,12 @@
+<FTL>
+<roamer name="oe_broadside" fleet="true" safe="false">
+	<event>OE_ENEMY_BROADSIDE_EVENT</event>
+	<removeEvent>DESTROYED_OE_BROADSIDE</removeEvent>
+	<removeEvent>DEAD_CREW_OE_BROADSIDE</removeEvent>
+	<sector level="7"/>
+	<image>map_icon_oe_broadside</image>
+	<target>player</target>
+	<jumpCooldown>0</jumpCooldown>
+	<start>left</start>
+</roamer>
+</FTL>

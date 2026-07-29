@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FTL>
 <mod:findName type="event" name="STORAGE_CHECK_BUTTON">
-  <mod-append:choice req="SHIP_AEA_BROADSIDE3" blue="true" hidden="true">
+  <mod-append:choice req="SHIP_OE_BROADSIDE3" blue="true" hidden="true">
     <text>Broadside Artillery.</text>
     <event load="OE_BROADSIDE3_MAIN" />
   </mod-append:choice>

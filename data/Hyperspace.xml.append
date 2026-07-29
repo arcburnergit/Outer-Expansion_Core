@@ -14,13 +14,13 @@
 		<mod-append:empty/>
 		<mod-append:empty/>
 			<!-- -->
-		<mod-append:empty/>
-		<mod-append:empty/>
-		<mod-append:empty/>
-		<mod-append:empty/>
+		<mod-append:empty oe="true"/>
+		<mod-append:empty oe="true"/>
+		<mod-append:empty oe="true"/>
+		<mod-append:empty oe="true"/>
 
-		<mod-append:empty/>
-		<mod-append:empty/>
+		<mod-append:empty oe="true"/>
+		<mod-append:empty oe="true"/>
 	</mod:findLike>
 	<mod-append:ship name="PLAYER_SHIP_OE_BROADSIDE" b="true" c="true" secret="true">
 		<unlock variant="a" silent="false">
@@ -197,6 +197,84 @@
             </item> 
 			<item>
                 <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    			
+            <item>
+                <blueprint>LIST_DRONES_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+	<customStore id="STORE_SYLVAN_OE_WEAPONS">
+        <itemPurchaseLimit>2</itemPurchaseLimit>
+		<category type="WEAPONS">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="WEAPONS">
+			<customTitle>OUTER EXPANSION</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    			
+            <item>
+                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+    </customStore>
+	<customStore id="STORE_SYLVAN_OE_LOOT">
+        <itemPurchaseLimit>1</itemPurchaseLimit>
+		<category type="WEAPONS">
+			<customTitle>OE LOOT</customTitle>
+            <item>
+                <blueprint>LIST_WEAPONS_OE_LOOT</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_OE_LOOT</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+            <item>
+                <blueprint>LIST_WEAPONS_OE_LOOT</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item>    
+        </category>
+		<category type="DRONES">
+			<customTitle>OE LOOT</customTitle>
+            <item>
+                <blueprint>LIST_DRONES_OE_LOOT</blueprint>
+                <modifier flat="false" max="1.1" min="0.8"/>
+                <price>-1</price>
+            </item> 
+			<item>
+                <blueprint>LIST_DRONES_OE_LOOT</blueprint>
                 <modifier flat="false" max="1.1" min="0.8"/>
                 <price>-1</price>
             </item>    			

@@ -99,13 +99,13 @@ local function setArtySlotFromWeapon(slot)
 end
 
 do
-	script.on_game_event("AEA_BROADSIDE_C_SLOT1", false, function()
+	script.on_game_event("OE_BROADSIDE_C_SLOT1", false, function()
 		setArtySlotFromWeapon(0)
 	end)
-	script.on_game_event("AEA_BROADSIDE_C_SLOT2", false, function()
+	script.on_game_event("OE_BROADSIDE_C_SLOT2", false, function()
 		setArtySlotFromWeapon(1)
 	end)
-	script.on_game_event("AEA_BROADSIDE_C_SLOT3", false, function()
+	script.on_game_event("OE_BROADSIDE_C_SLOT3", false, function()
 		setArtySlotFromWeapon(2)
 	end)
 end
@@ -153,7 +153,7 @@ script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
 end)
 
 script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
-	if weapon.isArtillery and Hyperspace.ships(weapon.iShipId):HasAugmentation("SHIP_AEA_BROADSIDE3") > 0 then
+	if weapon.isArtillery and Hyperspace.ships(weapon.iShipId):HasAugmentation("SHIP_OE_BROADSIDE3") > 0 then
 		if weapon.blueprint.typeName == "BEAM" then
 			projectile.sub_end = Hyperspace.Pointf(projectile.position.x, projectile.position.y - 300)
 		elseif weapon.blueprint.typeName ~= "BOMB" then
@@ -163,11 +163,79 @@ script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projec
 end)
 
 script.on_internal_event(Defines.InternalEvents.SHIP_LOOP, function(shipManager)
-	if shipManager.iShipId == 0 and shipManager:HasAugmentation("SHIP_AEA_BROADSIDE3") and shipManager.weaponSystem then
+	if shipManager.iShipId == 0 and shipManager:HasAugmentation("SHIP_OE_BROADSIDE3") and shipManager.weaponSystem then
 		if shipManager.weaponSystem.weapons:size() > 0 then
 			Hyperspace.playerVariables.oe_broadside_c_has_weapon = 1
 		else
 			Hyperspace.playerVariables.oe_broadside_c_has_weapon = 0
 		end
+	end
+end)
+
+
+local missileToggle = false
+local broadSideFocusBlueprint = Hyperspace.Blueprints:GetWeaponBlueprint("OE_BROADSIDE_FOCUS_BEAM")
+script.on_internal_event(Defines.InternalEvents.PROJECTILE_FIRE, function(projectile, weapon)
+	if projectile.extend.name == "ARTILLERY_OE_BROADSIDE_PIERCE" then
+		projectile.heading = -90
+		local spaceManager = Hyperspace.App.world.space
+		local laser = spaceManager:CreateLaserBlast(
+			weapon.blueprint,
+			Hyperspace.Pointf(projectile.position.x + 7, projectile.position.y),
+			projectile.currentSpace,
+			projectile.ownerId,
+			Hyperspace.Pointf(projectile.target.x + 7, projectile.target.y),
+			projectile.destinationSpace,
+			projectile.heading)
+		laser.entryAngle = projectile.entryAngle
+
+		projectile.position = Hyperspace.Pointf(projectile.position.x - 7, projectile.position.y)
+		projectile.target = Hyperspace.Pointf(projectile.target.x - 7, projectile.target.y)		
+	elseif projectile.extend.name == "ARTILLERY_OE_BROADSIDE_MISSILE" then
+		projectile.heading = -90
+		if missileToggle then
+			projectile.position = Hyperspace.Pointf(projectile.position.x - 7 - 16, projectile.position.y)
+		else
+			projectile.position = Hyperspace.Pointf(projectile.position.x + 7 - 17, projectile.position.y)
+		end
+		missileToggle = not missileToggle
+	elseif projectile.extend.name == "ARTILLERY_OE_BROADSIDE_MINE" then
+		projectile.heading = -90
+	elseif projectile.extend.name == "ARTILLERY_OE_BROADSIDE_FOCUS" then
+		local spaceManager = Hyperspace.App.world.space
+		local beam1 = spaceManager:CreateBeam(
+			broadSideFocusBlueprint, 
+			projectile.position, 
+			projectile.currentSpace, 
+			projectile.ownerId, 
+			projectile.target, 
+			Hyperspace.Pointf(projectile.target.x, projectile.target.y + 1), 
+			projectile.destinationSpace, 
+			1, 
+			-0.1)
+		beam1.sub_end = Hyperspace.Pointf(projectile.position.x, projectile.position.y - 300)
+		projectile:Kill()
+	elseif projectile.extend.name == "ARTILLERY_OE_BROADSIDE_PIERCE_ENEMY" or projectile.extend.name == "ARTILLERY_OE_BROADSIDE_PIERCE_ENEMY_OFFSET" then
+		projectile.heading = -180
+		local spaceManager = Hyperspace.App.world.space
+		local laser = spaceManager:CreateLaserBlast(
+			weapon.blueprint,
+			Hyperspace.Pointf(projectile.position.x, projectile.position.y + 7),
+			projectile.currentSpace,
+			projectile.ownerId,
+			Hyperspace.Pointf(projectile.target.x, projectile.target.y + 7),
+			projectile.destinationSpace,
+			projectile.heading)
+		laser.entryAngle = projectile.entryAngle
+
+		projectile.position = Hyperspace.Pointf(projectile.position.x, projectile.position.y - 7)
+		projectile.target = Hyperspace.Pointf(projectile.target.x, projectile.target.y - 7)	
+	elseif projectile.extend.name == "ARTILLERY_OE_BROADSIDE2_LASER" or projectile.extend.name == "ARTILLERY_OE_BROADSIDE2_ION" then
+		projectile.heading = -90
+	elseif projectile.extend.name == "ARTILLERY_OE_BROADSIDE2_MISSILE" then
+		projectile.heading = -90
+		projectile.position = Hyperspace.Pointf(projectile.position.x - 8, projectile.position.y)
+	elseif projectile.extend.name == "ARTILLERY_OE_BROADSIDE2_BEAM" then
+		projectile.sub_end = Hyperspace.Pointf(projectile.position.x, projectile.position.y - 300)
 	end
 end)

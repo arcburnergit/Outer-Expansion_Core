@@ -66,6 +66,14 @@ function mods.oe.offset_point_in_direction(position, angle, offset_x, offset_y)
 end
 local offset_point_in_direction = mods.oe.offset_point_in_direction
 
+function mods.oe.get_point_local_offset(original, target, offsetForwards, offsetRight)
+	local alpha = math.atan((original.y-target.y), (original.x-target.x))
+	local newX = original.x - (offsetForwards * math.cos(alpha)) - (offsetRight * math.cos(alpha+math.rad(90)))
+	local newY = original.y - (offsetForwards * math.sin(alpha)) - (offsetRight * math.sin(alpha+math.rad(90)))
+	return Hyperspace.Pointf(newX, newY)
+end
+local get_point_local_offset = mods.oe.get_point_local_offset
+
 function mods.oe.get_random_point_in_radius(center, radius)
 	r = radius * math.sqrt(math.random())
 	theta = math.random() * 2 * math.pi
