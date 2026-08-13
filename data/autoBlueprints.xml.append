@@ -10,6 +10,9 @@
 
 <blueprintList name="LIST_DRONES_OE_LOOT">
 </blueprintList>
+
+<blueprintList name="OE_SHOP_ITEM_SYSTEMS_EXTRA">
+</blueprintList>
 </FTL>
 
 <FTL>

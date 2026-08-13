@@ -6,6 +6,7 @@
   <mod-append:script>data/oe_scripts/core_roamers.lua</mod-append:script>
 </mod:findLike>
 <shieldWithoutSystem enabled="true"/>
+<multiShipFix enabled="true"/>
 
 <mod:findLike type="ships" limit="1" reverse="false">
   	<mod:findLike type="shipOrder">

@@ -6,4 +6,19 @@
     <event load="OE_BROADSIDE3_MAIN" />
   </mod-append:choice>
 </mod:findName>
+
+<mod:findName type="event" name="STORAGE_CHECK_AUG">
+  <mod-append:choice req="MVBOSS_SPAWNER">
+    <text>(Drive Hacker) Summon an Outer Expansion MV vessel.</text>
+    <event load="STORAGE_CHECK_AUG_OE_BOSS_SPAWNER_LIST" />
+  </mod-append:choice>
+</mod:findName>
+
+<event name="STORAGE_CHECK_AUG_OE_BOSS_SPAWNER_LIST">
+	<text>You check what ships are available to be summoned currently. Summoning an MV boss will take 7{.</text>
+	<choice req="pilot" lvl="1" max_group="0">
+		<text>Nevermind, do something else.</text>
+		<event load="STORAGE_CHECK" />
+	</choice>
+</event>
 </FTL>

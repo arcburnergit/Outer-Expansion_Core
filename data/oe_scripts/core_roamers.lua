@@ -211,7 +211,7 @@ local function new_active_roamer(roamer_def)
 		if current_closest then new_roamer.beacon = current_closest end
 	end
 	if not new_roamer.beacon then
-		print("could not create active roamer, no beacon")
+		--print("could not create active roamer, no beacon")
 		return nil
 	end
 	new_roamer.current_jump = roamer_def.jumpCooldown

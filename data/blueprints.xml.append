@@ -661,3 +661,102 @@
 </shipBlueprint>
 
 </FTL>
+
+<FTL>
+<augBlueprint name="OE_GREASE_EFFECT_SHOCK">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_SHATTER">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_ACID">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_SHLEG">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_BIRD">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_NECRO">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_CASCADE">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_DD_SOULPLAGUE">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_DD_DARKNESS">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_DD_SHADOW">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_DD_RADIANT">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GREASE_EFFECT_CHAOS">
+	<title>Weapons Amplifier Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+</FTL>
