@@ -760,3 +760,62 @@
 	<value>1</value>
 </augBlueprint>
 </FTL>
+
+<FTL>
+<augBlueprint name="OE_GROWTH_BUD_PRAETOR">
+	<title>Life Bloom Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GROWTH_BUD_CULTIVATOR">
+	<title>Life Bloom Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GROWTH_BUD_ACIDIC">
+	<title>Life Bloom Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GROWTH_BUD_SUFFOCATING">
+	<title>Life Bloom Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GROWTH_BUD_ENTANGLING">
+	<title>Life Bloom Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GROWTH_BUD_ELECTRIFIED">
+	<title>Life Bloom Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+<augBlueprint name="OE_GROWTH_BUD_DD_SOULPLAGUED">
+	<title>Life Bloom Enhancement</title>
+	<desc>YOU SHOULD NEVER SEE THIS</desc>
+	<cost>0</cost>
+	<rarity>0</rarity>
+	<stackable>true</stackable>
+	<value>1</value>
+</augBlueprint>
+</FTL>

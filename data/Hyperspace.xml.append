@@ -69,6 +69,8 @@
 </augments>
 
 <events>
+	<variable name="oe_test_variable" op="set" val="0"/>
+
 	<variable name="oe_broadside_roamer_beacon_x" op="set" val="0"/>
 	<variable name="oe_broadside_roamer_beacon_y" op="set" val="0"/>
 	<variable name="oe_broadside_roamer_jumping" op="set" val="0"/>
