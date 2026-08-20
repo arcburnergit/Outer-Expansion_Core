@@ -90,6 +90,7 @@ do --Parse file
 			end
 			new_roamer_def.fleet = node_get_bool_default(node:first_attribute("fleet"), true)
 			new_roamer_def.safe = node_get_bool_default(node:first_attribute("safe"), true)
+			new_roamer_def.reset = node_get_bool_default(node:first_attribute("reset"), true)
 			if not (new_roamer_def.fleet or new_roamer_def.safe) then
 				log(string.format("roamer %s cannot be excluded from both the fleet and safe zone, defaulting to safe zone only.", new_roamer_def.name))
 				new_roamer_def.safe = true
@@ -106,10 +107,10 @@ do --Parse file
 					new_roamer_def.removeEvents[removeEventNode:value()] = true
 				end
 			end
-			new_roamer_def.sector = {}
 			if node:first_node("sector") then
+				new_roamer_def.sector = {}
 				local sectorNode = node:first_node("sector")
-				new_roamer_def.sector.level = node_get_number_default(node:first_attribute("level"), nil)
+				new_roamer_def.sector.level = node_get_number_default(sectorNode:first_attribute("level"), nil)
 				if sectorNode:first_node() then
 					new_roamer_def.sector.names = {}
 					for sectorNameNode in node_child_iter(sectorNode) do
@@ -140,6 +141,20 @@ do --Parse file
 				log(string.format("roamer %s has no start set, defaulting to right side.", new_roamer_def.name))
 			end
 			table.insert(roamer_def_list, new_roamer_def)
+		end
+	end
+end
+
+local new_sector_events = {}
+local sector_data_file = "data/sector_data.xml"
+do --Parse file
+	local doc = RapidXML.xml_document(sector_data_file)
+	for node in node_child_iter(doc:first_node("FTL") or doc) do
+		if node:name() == "sectorDescription" and node:first_node("startEvent") then
+			local sectorNode = node:first_node("startEvent")
+			if sectorNode:value() then
+				new_sector_events[sectorNode:value()] = true
+			end
 		end
 	end
 end
@@ -243,6 +258,13 @@ script.on_internal_event(Defines.InternalEvents.POST_CREATE_CHOICEBOX, function(
 			remove_active_roamer(roamer_def)
 		end
 	end
+	if new_sector_events[event.eventName] then
+		for _, roamer_def in ipairs(roamer_def_list) do
+			if active_roamers[roamer_def.name] and not roamer_def.reset then
+				remove_active_roamer(roamer_def)
+			end
+		end
+	end
 end)
 
 script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
@@ -261,6 +283,8 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 			if roamer_def.sector then
 				if roamer_def.sector.level and Hyperspace.playerVariables.loc_sector_count ~= roamer_def.sector.level then
 					should_be_active = false
+					print("roamer:"..roamer_def.name)
+					print("roamer should not be active this sector due to sector number")
 				end
 				if roamer_def.sector.names and (not roamer_def.sector.names[map.currentSector.description.type]) then
 					should_be_active = false
