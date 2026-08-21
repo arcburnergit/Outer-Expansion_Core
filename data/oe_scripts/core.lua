@@ -1,4 +1,4 @@
-local version = {major = 1, minor = 20}
+local version = {major = 1, minor = 23}
 if not (Hyperspace.version and Hyperspace.version.major == version.major and Hyperspace.version.minor >= version.minor) then
 	error("Incorrect Hyperspace version detected! The Outer Expansion: Core requires Hyperspace "..version.major.."."..version.minor.."+")
 end
