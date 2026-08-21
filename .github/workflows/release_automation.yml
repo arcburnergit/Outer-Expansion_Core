@@ -1,0 +1,25 @@
+name: Zip and Attach to Release with Tag
+
+on:
+  release:
+    types: [published] 
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Create File
+      run: |
+        zip -r Outer-Expansion_Core.zip audio data img mod-appendix -x "*.git/*"
+        
+    - name: Upload Release Asset
+      uses: softprops/action-gh-release@v1
+      with:
+        files: 
+          "Outer-Expansion_Core.zip"
