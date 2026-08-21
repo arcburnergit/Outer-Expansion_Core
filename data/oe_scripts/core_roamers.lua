@@ -283,8 +283,6 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 			if roamer_def.sector then
 				if roamer_def.sector.level and Hyperspace.playerVariables.loc_sector_count ~= roamer_def.sector.level then
 					should_be_active = false
-					print("roamer:"..roamer_def.name)
-					print("roamer should not be active this sector due to sector number")
 				end
 				if roamer_def.sector.names and (not roamer_def.sector.names[map.currentSector.description.type]) then
 					should_be_active = false
@@ -335,6 +333,11 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
 					end
 					roamer.beacon = roamer.beacon.connectedLocations[0]
 					roamer.current_jump = roamer_def.jumpCooldown
+					if tostring(roamer.beacon) == tostring(last_potential_loc) then
+						last_original_event = next.event.eventName
+						next.event = Hyperspace.Event:CreateEvent(roamer_def.event, Hyperspace.playerVariables.loc_sector_count, true)
+						next.visited = 0
+					end
 				elseif roamer.current_jump <= 0 then
 					local target = map.currentLoc
 					if roamer_def.target == targets_enum.player and last_potential_loc then
@@ -386,10 +389,6 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 				local roamer = active_roamers[roamer_def.name]
 				local projected_next = nil
 				if tostring(roamer.beacon) == tostring(map.currentLoc) then
-					if last_original_event then
-						roamer.beacon.event = Hyperspace.Event:CreateEvent(last_original_event, Hyperspace.playerVariables.loc_sector_count, true)
-						last_original_event = nil
-					end
 					projected_next = roamer.beacon.connectedLocations[0]
 				elseif roamer.current_jump <= 0 then
 					local target = map.currentLoc
@@ -416,7 +415,7 @@ script.on_render_event(Defines.RenderEvents.GUI_CONTAINER, function() end, funct
 					end
 				end
 
-				if projected_next then
+				if projected_next and tostring(projected_next) ~= tostring(roamer.beacon) then
 					local this_loc = roamer.beacon.loc
 					local next_loc = projected_next.loc
 					roamer.rotation = roamer.rotation + time_increment(false) * 15
