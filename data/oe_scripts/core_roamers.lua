@@ -366,6 +366,10 @@ script.on_internal_event(Defines.InternalEvents.JUMP_LEAVE, function(shipManager
 						elseif canMoveTo then
 							roamer.beacon = next
 							roamer.current_jump = roamer_def.jumpCooldown
+						elseif tostring(roamer.beacon) == tostring(last_potential_loc) then
+							last_original_event = next.event.eventName
+							next.event = Hyperspace.Event:CreateEvent(roamer_def.event, Hyperspace.playerVariables.loc_sector_count, true)
+							next.visited = 0
 						end
 					end
 				else
