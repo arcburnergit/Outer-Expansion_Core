@@ -280,8 +280,11 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 
 		for _, roamer_def in ipairs(roamer_def_list) do
 			local should_be_active = true
+			--print(roamer_def.name)
+			--print(Hyperspace.playerVariables.loc_sector_count)
+			--print(roamer_def.sector and roamer_def.sector.level)
 			if roamer_def.sector then
-				if roamer_def.sector.level and Hyperspace.playerVariables.loc_sector_count ~= roamer_def.sector.level then
+				if roamer_def.sector.level and (Hyperspace.playerVariables.loc_sector_count + 1) ~= roamer_def.sector.level then
 					should_be_active = false
 				end
 				if roamer_def.sector.names and (not roamer_def.sector.names[map.currentSector.description.type]) then
