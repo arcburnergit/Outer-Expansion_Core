@@ -107,7 +107,7 @@
 	<type>LASER</type>
 	<title>Pierce Laser Artillery</title>
 	<short>Artillery</short>
-	<desc>[Base cooldown: 20] A slow charging duel laser cannon that fires 2 lasers per burst per barrel for a total of 4 shots per charge.</desc>
+	<desc>[Base cooldown: 20] A slow charging dual laser cannon that fires 2 lasers per burst per barrel for a total of 4 shots per charge.</desc>
 	<tooltip>Artillery: A relatively slow charging burst of lasers capable of piercing one layer of shields.</tooltip>
 	<damage>1</damage>
 	<accuracyMod>10</accuracyMod>
@@ -266,7 +266,7 @@
 
 <weaponBlueprint name="ARTILLERY_OE_BROADSIDE_MISSILE">
 	<type>MISSILES</type>
-	<title>Duel Missile Artillery</title>
+	<title>Dual Missile Artillery</title>
 	<short>Artillery</short>
 	<desc>[Base cooldown: 20] Fires a pair of missiles which do heavy damage and never miss.</desc>
 	<tooltip>Artillery: Fires a pair of missiles which do heavy damage and never miss.</tooltip>
