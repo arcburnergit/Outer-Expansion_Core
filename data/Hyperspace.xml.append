@@ -276,6 +276,10 @@
 	<mod-append:page>
 		<section text="Thest's Boons (OE)" hidden="false">
 		</section>
+		<section text="Corby's Grants (OE)" hidden="false">
+		</section>
+		<section text="Wakeson's Blessings (OE)" hidden="false">
+		</section>
 	</mod-append:page>
 </mod:findLike>
 </FTL>
