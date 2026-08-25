@@ -210,45 +210,6 @@
             </item>    
         </category>
     </customStore>
-	<customStore id="STORE_SYLVAN_OE_WEAPONS">
-        <itemPurchaseLimit>2</itemPurchaseLimit>
-		<category type="WEAPONS">
-			<customTitle>OUTER EXPANSION</customTitle>
-            <item>
-                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
-                <modifier flat="false" max="1.1" min="0.8"/>
-                <price>-1</price>
-            </item>    
-            <item>
-                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
-                <modifier flat="false" max="1.1" min="0.8"/>
-                <price>-1</price>
-            </item>    
-            <item>
-                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
-                <modifier flat="false" max="1.1" min="0.8"/>
-                <price>-1</price>
-            </item>    
-        </category>
-		<category type="WEAPONS">
-			<customTitle>OUTER EXPANSION</customTitle>
-            <item>
-                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
-                <modifier flat="false" max="1.1" min="0.8"/>
-                <price>-1</price>
-            </item> 
-			<item>
-                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
-                <modifier flat="false" max="1.1" min="0.8"/>
-                <price>-1</price>
-            </item>    			
-            <item>
-                <blueprint>LIST_WEAPONS_OE_SYLVAN</blueprint>
-                <modifier flat="false" max="1.1" min="0.8"/>
-                <price>-1</price>
-            </item>    
-        </category>
-    </customStore>
 	<customStore id="STORE_SYLVAN_OE_LOOT">
         <itemPurchaseLimit>1</itemPurchaseLimit>
 		<category type="WEAPONS">

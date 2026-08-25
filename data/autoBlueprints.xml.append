@@ -1,17 +1,22 @@
 <FTL>
 <blueprintList name="LIST_WEAPONS_OE_SYLVAN">
+	<name>LASER_BURST_1</name>
 </blueprintList>
 
 <blueprintList name="LIST_DRONES_OE_SYLVAN">
+	<name>DEFENSE_1</name>
 </blueprintList>
 
 <blueprintList name="LIST_WEAPONS_OE_LOOT">
+	<name>LASER_BURST_1</name>
 </blueprintList>
 
 <blueprintList name="LIST_DRONES_OE_LOOT">
+	<name>DEFENSE_1</name>
 </blueprintList>
 
 <blueprintList name="OE_SHOP_ITEM_SYSTEMS_EXTRA">
+	<name>pilot</name>
 </blueprintList>
 </FTL>
 
