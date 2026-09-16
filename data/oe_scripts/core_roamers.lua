@@ -120,6 +120,12 @@ do --Parse file
 					end
 				end
 			end
+			new_roamer_def.avoidSectors = {}
+			for removeEventNode in node_child_iter(node) do
+				if removeEventNode:name() == "avoidSector" and removeEventNode:value() then
+					new_roamer_def.avoidSectors[removeEventNode:value()] = true
+				end
+			end
 			local map_icon_name = (node:first_node("image") and node:first_node("image"):value()) or "map_icon_boss"
 			new_roamer_def.image = Hyperspace.Resources:CreateImagePrimitiveString("map/"..map_icon_name..".png", -32, -32, 0, Graphics.GL_Color(1, 1, 1, 1), 1, false)
 			if node:first_node("target") and node:first_node("target"):value() then
@@ -280,9 +286,6 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 
 		for _, roamer_def in ipairs(roamer_def_list) do
 			local should_be_active = true
-			--print(roamer_def.name)
-			--print(Hyperspace.playerVariables.loc_sector_count)
-			--print(roamer_def.sector and roamer_def.sector.level)
 			if roamer_def.sector then
 				if roamer_def.sector.level and (Hyperspace.playerVariables.loc_sector_count + 1) ~= roamer_def.sector.level then
 					should_be_active = false
@@ -292,6 +295,9 @@ script.on_internal_event(Defines.InternalEvents.ON_TICK, function()
 				end
 			end
 			if Hyperspace.playerVariables[roamer_def.name.."_removed"] == 1 then
+				should_be_active = false
+			end
+			if roamer_def.avoidSectors[map.currentSector.description.type] then
 				should_be_active = false
 			end
 

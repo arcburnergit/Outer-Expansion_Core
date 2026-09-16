@@ -458,12 +458,14 @@
 	<text>The fiery red of the explosions complements the orange hull of the Rebel ship. Satisfied with your handiwork, you scrap the ship.</text>
   <modifyPursuit amount="-2" />
   <unlockCustomShip silent="false">PLAYER_SHIP_OE_BROADSIDE</unlockCustomShip>
+  <achievement>ACH_OE_BROADSIDE_DEFEATED</achievement>
 	<autoReward level="MED">standard</autoReward>
 </event>
 <event name="DEAD_CREW_OE_BROADSIDE">
 	<text>With the Rebel vessel now clear of its crew, you are free to scrap the remains.</text>
   <modifyPursuit amount="-2" />
   <unlockCustomShip silent="false">PLAYER_SHIP_OE_BROADSIDE</unlockCustomShip>
+  <achievement>ACH_OE_BROADSIDE_DEFEATED</achievement>
   <!--unlockCustomShip silent="false">PLAYER_SHIP_OE_BROADSIDE</unlockCustomShip-->
 	<autoReward level="HIGH">standard</autoReward>
 </event>

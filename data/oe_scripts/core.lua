@@ -3,6 +3,7 @@ if not (Hyperspace.version and Hyperspace.version.major == version.major and Hyp
 	error("Incorrect Hyperspace version detected! The Outer Expansion: Core requires Hyperspace "..version.major.."."..version.minor.."+")
 end
 mods.oe = {}
+mods.oe.core_version = {major = 1, minor = 1}
 
 local time_increment = mods.multiverse.time_increment
 local vter = mods.multiverse.vter
