@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FTL>
+<event name="ADDON_OE">
+	<hover-text>Outer Expansion Redux
+	Click to see more info.</hover-text>
+<text>Outer Expansion Redux
+Developed by: Arc
+Currently Enabled.
+
+Adds new races, crew, equipment and more.</text>
+</event>
+
+</FTL>
